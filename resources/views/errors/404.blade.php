@@ -4,11 +4,11 @@
             <x-application-logo class="w-16 h-16 sm:w-20 sm:h-20" />
         </div>
         
-        <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4 text-center" id="title">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-center" id="title">
             404 | Pagina Niet Gevonden
         </h1>
         
-        <p class="text-gray-600 mb-6 sm:mb-8 text-center text-sm sm:text-base" id="message">
+        <p class="mb-6 sm:mb-8 text-center text-sm sm:text-base" id="message">
             Sorry, de pagina die je zoekt bestaat niet.
         </p>
         
