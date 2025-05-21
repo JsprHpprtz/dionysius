@@ -1,6 +1,13 @@
+@import "flowbite/src/themes/default";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "flowbite/src/themes/default";
+
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../storage/framework/views/*.php";
+
+@plugin "daisyui";
 @plugin "flowbite/plugin";
 @source "../../node_modules/flowbite";
