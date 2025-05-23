@@ -82,3 +82,73 @@
         @endforeach
     </ul>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hamburger menu functionality
+        const hamburgerBtn = document.querySelector('[data-collapse-toggle="navbar-solid-bg"]');
+        const mobileMenu = document.getElementById('navbar-solid-bg');
+        
+        if (hamburgerBtn && mobileMenu) {
+            hamburgerBtn.addEventListener('click', function() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    // Show menu first, then animate
+                    mobileMenu.classList.remove('hidden');
+                    
+                    // Animate menu opening with GSAP
+                    gsap.fromTo(mobileMenu, 
+                        { opacity: 0, height: 0 },
+                        { opacity: 1, height: 'auto', duration: 0.3, ease: 'power3.out' }
+                    );
+                    
+                    // Animate menu items with stagger
+                    const menuItems = mobileMenu.querySelectorAll('li');
+                    gsap.fromTo(menuItems, 
+                        { y: 15, opacity: 0 },
+                        { y: 0, opacity: 1, stagger: 0.05, duration: 0.2, delay: 0.1 }
+                    );
+                } else {
+                    // Animate menu closing
+                    gsap.to(mobileMenu, { 
+                        opacity: 0, 
+                        height: 0, 
+                        duration: 0.3, 
+                        ease: 'power3.in',
+                        onComplete: () => mobileMenu.classList.add('hidden')
+                    });
+                }
+                
+                // Update aria-expanded attribute for accessibility
+                const isExpanded = !isHidden;
+                hamburgerBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+            });
+        }
+
+        // Theme toggle animation for background transition
+        const themeToggle = document.querySelector('.theme-controller');
+        if (themeToggle) {
+            // Add transition CSS to html element
+            document.documentElement.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+            
+            // Add transition to all elements that change with theme
+            const transitionElements = `
+                nav, .bg-white, [class*="bg-gray"], [class*="text-gray"], 
+                [class*="border-gray"], [class*="shadow"], [class*="dark:bg"], 
+                [class*="dark:text"], [class*="dark:border"], [class*="hover:bg"], 
+                [class*="dark:hover:bg"]
+            `;
+            
+            document.querySelectorAll(transitionElements).forEach(el => {
+                el.style.transition = 'background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease';
+            });
+            
+            themeToggle.addEventListener('change', function() {
+                const isDark = this.checked;
+                document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            });
+        }
+    });
+</script>
