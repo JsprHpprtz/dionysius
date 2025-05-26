@@ -83,24 +83,22 @@
     <!-- Trainer Cards -->
     <div class="flex flex-col sm:grid sm:grid-cols-2 md:grid md:grid-cols-3 gap-3 mx-40 trainers-grid">
         @foreach ($trainers as $trainer)
-            <div class="relative rounded overflow-hidden opacity-0 translate-y-10 trainer-card group w-[300px] h-[300px] mx-auto">
-                <img src="{{ asset('images/profile/' . $trainer['image']) }}" alt="Trainer {{ $trainer['name'] }}"
-                    class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent 
-                    opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div
-                        class="absolute bottom-0 left-0 w-full p-4 transform translate-y-full 
-                            group-hover:translate-y-0 transition-transform duration-300">
-                        <span class="text-white font-semibold text-lg drop-shadow block mb-2">
-                            {{ $trainer['name'] }}
-                        </span>
-                        <p class="text-white/90 text-sm">
-                            {{ $trainer['description'] }}
-                        </p>
-                    </div>
+        <div class="card max-w-[20rem] w-full bg-base-300 shadow-sm opacity-0 translate-y-10 border-8 border-base-300">
+            <figure>
+                <img 
+                src="{{ asset('images/profile/' . $trainer['image']) }}"
+                alt="Trainer {{ $trainer['name'] }}" 
+                class="w-full h-full object-cover"/>
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title">{{ $trainer['name'] }}</h2>
+                <p>{{ $trainer['description'] }}</p>
+                <div class="card-actions justify-end">
                 </div>
             </div>
+        </div>
+
+
         @endforeach
     </div>
     <div class="mx-40 my-16">
@@ -110,28 +108,24 @@
     <!-- Assistant Cards (similar updates) -->
     <div class="flex flex-col sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 gap-3 mx-40 my-16 assistants-grid">
         @foreach ($assistants as $assistant)
-            <div class="relative rounded overflow-hidden opacity-0 translate-y-10 assistant-card group w-[300px] h-[300px] mx-auto">
-                <img src="{{ asset('images/profile/' . $assistant['image']) }}"
+        <div class="card max-w-[20rem] w-full bg-base-300 shadow-sm opacity-0 translate-y-10 assistant-card border-8 border-base-300">
+            <figure>
+                <img
+                    src="{{ asset('images/profile/' . $assistant['image']) }}"
                     alt="Assistent {{ $assistant['name'] }}"
-                    class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent 
-                    opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div
-                        class="absolute bottom-0 left-0 w-full p-4 transform translate-y-full 
-                            group-hover:translate-y-0 transition-transform duration-300">
-                        <span class="text-white font-semibold text-lg drop-shadow block mb-2">
-                            {{ $assistant['name'] }}
-                        </span>
-                        <p class="text-white/90 text-sm">
-                            {{ $assistant['description'] }}
-                        </p>
-                    </div>
+                    class="w-full h-full object-cover" />
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title">{{ $assistant['name'] }}</h2>
+                <p>{{ $assistant['description'] }}</p>
+                <div class="card-actions justify-end">
+                    <!-- optionele knoppen -->
                 </div>
             </div>
+        </div>
         @endforeach
     </div>
-
+    <x-footer />
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             gsap.registerPlugin(ScrollTrigger);
@@ -150,7 +144,7 @@
             });
 
             // Animate trainer cards with stagger
-            gsap.to(".trainer-card", {
+            gsap.to(".card", {
                 opacity: 1,
                 y: 0,
                 duration: 0.8,
