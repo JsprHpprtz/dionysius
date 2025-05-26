@@ -125,7 +125,7 @@
         </div>
         @endforeach
     </div>
-    <x-footer />
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             gsap.registerPlugin(ScrollTrigger);
