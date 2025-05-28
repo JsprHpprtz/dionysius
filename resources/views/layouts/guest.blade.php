@@ -28,16 +28,14 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
         <script>
-            // Theme controller
+            
             document.addEventListener('DOMContentLoaded', () => {
                 const themeController = document.querySelector('.theme-controller');
                 
-                // Check for saved theme
                 const savedTheme = localStorage.getItem('theme') || 'light';
                 document.documentElement.setAttribute('data-theme', savedTheme);
                 themeController.checked = savedTheme === 'dark';
 
-                // Theme toggle handler
                 themeController.addEventListener('change', (e) => {
                     const theme = e.target.checked ? 'dark' : 'light';
                     document.documentElement.setAttribute('data-theme', theme);
@@ -45,6 +43,70 @@
                 });
             });
         </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const htmlElement = document.documentElement;
+                const footerBannerImg = document.getElementById('footer-banner-img');
+                const themeLogoImages = document.querySelectorAll('.theme-logo');
+
+                function updateThemeImages() {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const isDarkTheme = currentTheme === 'dark';
+
+                if (footerBannerImg) {
+                    if (isDarkTheme) {
+                    footerBannerImg.src = 'images/footer-banner-light.png';
+                    footerBannerImg.alt = 'Footer banner light';
+                    } else {
+                    footerBannerImg.src = 'images/footer-banner.png';
+                    footerBannerImg.alt = 'Footer banner';
+                    }
+                } else {
+                    console.warn('Footer banner image element not found.');
+                }
+
+                if (themeLogoImages.length > 0) {
+                    themeLogoImages.forEach(imgElement => {
+                        if (isDarkTheme) {
+                            if (imgElement.src.includes('logo.png')) {
+                                imgElement.src = '{{ asset("images/logo-light.png") }}';
+                                imgElement.alt = 'Logo Light';
+                            } else if (imgElement.src.includes('another-logo.png')) {
+                                imgElement.src = '{{ asset("images/another-logo-light.png") }}';
+                                imgElement.alt = 'Another Logo Light';
+                            }
+                        } else {
+                            if (imgElement.src.includes('logo-light.png')) {
+                                imgElement.src = '{{ asset("images/logo.png") }}';
+                                imgElement.alt = 'Logo';
+                            } else if (imgElement.src.includes('another-logo-light.png')) {
+                                imgElement.src = '{{ asset("images/another-logo.png") }}';
+                                imgElement.alt = 'Another Logo';
+                            }
+                        }
+                    });
+                } else {
+                    console.warn('No images with class "theme-logo" found.'); // Can uncomment for debugging
+                }
+                }
+                
+
+                updateThemeImages();
+
+                const observer = new MutationObserver((mutationsList) => {
+                for (const mutation of mutationsList) {
+                    if (
+                    mutation.type === 'attributes' &&
+                    mutation.attributeName === 'data-theme'
+                    ) {
+                    updateThemeImages();
+                    }
+                }
+                });
+
+                observer.observe(htmlElement, { attributes: true });
+            });
+            </script>
         <x-footer />
     </body>
 </html>

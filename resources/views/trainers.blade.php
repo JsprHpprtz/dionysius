@@ -1,4 +1,5 @@
 <x-guest-layout>
+
     <div class="mx-40 my-16">
         <h2 class="text-5xl font-bold mb-8 text-center my-40 opacity-0 translate-y-10" id="trainersTitle">Onze trainers
         </h2>

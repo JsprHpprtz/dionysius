@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <div class="mb-6 sm:mb-8" id="logo">
-            <x-application-logo class="w-16 h-16 sm:w-20 sm:h-20" />
+            <x-application-logo class="theme-logo w-16 h-16 sm:w-20 sm:h-20" />
         </div>
         
         <h1 class="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-center" id="title">

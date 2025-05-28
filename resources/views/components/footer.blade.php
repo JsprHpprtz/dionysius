@@ -1,7 +1,7 @@
 <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
   <aside>
     <div>
-        <img src="images/logo.png" class="w-full max-w-[3rem] sm:max-w-[4rem] md:max-w-[5rem] h-auto" alt="logo">
+        <x-application-logo-small class="theme-logo w-full max-w-[3rem] sm:max-w-[4rem] md:max-w-[5rem] h-auto" alt="logo" />
     </div>
 
     
@@ -29,8 +29,8 @@
   </nav>
   <nav>
     <h6 class="footer-title">Dionysius is aangesloten bij:</h6>
-    <div class="">
-        <img src="images/footer-banner.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto" alt="Footer banner">
+    <div>
+        <img id="footer-banner-img" src="images/footer-banner.png" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto" alt="Footer banner" />
     </div>
   </nav>
   <nav>
