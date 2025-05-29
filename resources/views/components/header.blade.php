@@ -30,10 +30,13 @@
                     @foreach($navLinks as $link)
                         <li class="w-full md:w-auto">
                             <a href="{{ $link['href'] }}"
-                               class="group flex items-center justify-center gap-3 w-full py-2.5 px-4 md:px-3 text-gray-700 hover:text-gray-900 rounded-lg md:rounded-full md:hover:bg-gray-100/50 dark:text-gray-600 dark:hover:text-gray-800 md:dark:hover:bg-gray-200/50 transition-all duration-200">
+                               class="group flex items-center justify-center gap-3 w-full py-2.5 px-4 md:px-3 text-gray-700 rounded-lg md:rounded-full dark:text-gray-600 transition-all duration-200 ease-in-out hover:text-red-800 hover:scale-105">
                                 @php $icon = 'icons.' . $link['icon']; @endphp
-                                <x-dynamic-component :component="$icon" class="w-4 h-4 opacity-75 group-hover:opacity-100"/>
-                                <span class="text-sm font-medium">{{ $link['label'] }}</span>
+                                <x-dynamic-component 
+                                    :component="$icon" 
+                                    class="w-4 h-4 opacity-75 group-hover:opacity-100 transition-all duration-200 ease-in-out group-hover:scale-110 group-hover:text-red-800"
+                                />
+                                <span class="text-sm font-medium transition-all duration-200 ease-in-out group-hover:scale-110 group-hover:text-red-800">{{ $link['label'] }}</span>
                             </a>
                         </li>
                     @endforeach

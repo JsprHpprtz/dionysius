@@ -24,12 +24,16 @@
             </div>
         </div>
 
-        <div class="p-6 lg:p-8 flex flex-col items-center">
-            <div>
-                <h2 class="text-3xl font-bold mt-8">Wat is GTV Dionysius?</h2>
-                <p class="mt-4 text-lg">GTV Dionysius is een tafeltennisvereniging in Tilburg. Wij bieden trainingen en competities voor spelers van alle niveaus.</p>
-                <p class="mt-4 text-lg">Onze trainers zijn ervaren en gepassioneerd, en helpen je graag om je tafeltennisvaardigheden te verbeteren.</p>
-                <p class="mt-4 text-lg">Neem een kijkje op onze website voor meer informatie over onze trainingen, evenementen en lidmaatschapsopties.</p>
+        <div class="p-6 lg:p-8 flex flex-col items-center gap-x-4">
+            <div class="flex justify-center items-center py-16 px-4">
+                <div class="max-w-2xl w-full bg-white/80 dark:bg-[#f7f7f7]/80 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center backdrop-blur-sm border border-gray-200/60">
+                    <h2 class="text-4xl font-extrabold mb-6 text-gray-900 dark:text-gray-800 tracking-tight">Wat is GTV Dionysius?</h2>
+                    <p class="mb-4 text-lg text-gray-700 dark:text-gray-600">Welkom op de site van GTV Dionysius, een actieve en gezellige turnvereniging in Tilburg, opgericht in 1924.</p>
+                    <p class="mb-4 text-lg text-gray-700 dark:text-gray-600">Je kunt bij Dionysius terecht voor een rijk aanbod aan trainingen voor jong en oud. Zo hebben wij kleuterlessen voor de allerkleinsten, Gym en turnlessen voor alle leeftijden maar ook sportfit lessen waar leden van ruim zeventig jaar nog actief elke week sporten. Al deze trainingen worden geleid door goed opgeleide trainers.</p>
+                    <p class="mb-4 text-lg text-gray-700 dark:text-gray-600">Mocht je een keer de sfeer op een training willen proeven dan kan dat. Ga langs op één van de trainingen en doe twee trainingen gratis en vrijblijvend mee. We hopen je snel op een van de trainingen te zien.</p>
+                    <p class="mb-2 text-lg text-gray-700 dark:text-gray-600">Mocht je nog verdere vragen hebben over onze vereniging of reacties hebben m.b.t. deze site dan kun je ons mailen op</p>
+                    <a href="mailto:info@gtvdionysius.nl" class="text-red-800 font-semibold underline hover:text-red-600 transition-colors duration-200">info@gtvdionysius.nl</a>
+                </div>
             </div>
         </div>
 
@@ -49,5 +53,6 @@
                 });
             });
         </script>
+        <x-footer/>
     </body>
 </html>
