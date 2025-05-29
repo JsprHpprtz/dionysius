@@ -1,24 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="light">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Dionysius – GTV Dionysius Tilburg</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
-        <!-- Styles / Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="min-h-screen">
-        <x-header/>
-
+<x-guest-layout>
         <div class="w-full min-h-screen flex items-center justify-center rounded-none shadow-none m-0 z-0"
              style="background-image: url('{{ asset('images/slider_1_1920.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-            <div id="hero-content" class="bg-black/50 p-8 rounded text-white text-center w-full">
+            <div id="hero-content" class="backdrop-blur-md bg-black/50 p-8 rounded text-white text-center w-full">
                 <h1 class="text-4xl font-bold mb-2">Welkom bij GTV Dionysius Tilburg</h1>
                 <p class="text-lg">Samen sporten, samen groeien.</p>
             </div>
@@ -53,6 +36,4 @@
                 });
             });
         </script>
-        <x-footer/>
-    </body>
-</html>
+</x-guest-layout>

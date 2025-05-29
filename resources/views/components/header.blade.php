@@ -1,9 +1,9 @@
 <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-white/80 dark:bg-[#ebebeb]/80 border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm">
     <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-3">
         <!-- Logo and hamburger button ... -->
-        <div class="flex-shrink-0">
-            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse hover:opacity-80 transition-opacity">
-                <x-application-logo-small class="h-16 w-16"/>
+        <div class="">
+            <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+                <x-application-logo-small class="theme-logo h-16 w-16"/>
             </a>
         </div>
         <div class="flex items-center">
