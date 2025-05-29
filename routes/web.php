@@ -11,8 +11,8 @@ Route::get('/trainers', function () {
     return view('trainers');
 });
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/agenda', function () {
+    return view('agenda');
 });
 
 Route::get('/dashboard', function () {

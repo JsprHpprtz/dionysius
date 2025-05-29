@@ -1,6 +1,7 @@
 <x-guest-layout>
+
     <div class="mx-40 my-16">
-        <h2 class="text-5xl font-bold mb-8 text-center my-40 opacity-0 translate-y-10" id="trainersTitle">Onze trainers
+        <h2 class="text-5xl font-bold mb-8 text-center my-40 opacity-0 translate-y-10" id="trainersTitle" style="color: #660000;">Onze trainers
         </h2>
     </div>
     @php
@@ -102,7 +103,7 @@
         @endforeach
     </div>
     <div class="mx-40 my-16">
-        <h2 class="text-5xl font-bold mb-8 text-center my-16 opacity-0 translate-y-10" id="assistantsTitle">Onze
+        <h2 class="text-5xl font-bold mb-8 text-center my-16 opacity-0 translate-y-10" id="assistantsTitle" style="color: #660000;">Onze
             assistenten</h2>
     </div>
     <!-- Assistant Cards (similar updates) -->
@@ -125,7 +126,7 @@
         </div>
         @endforeach
     </div>
-    <x-footer />
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             gsap.registerPlugin(ScrollTrigger);
@@ -153,12 +154,7 @@
                     grid: "auto",
                     from: "start"
                 },
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: ".trainers-grid",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
-                }
+                ease: "power3.out"
             });
 
             // Animate assistants title
@@ -166,12 +162,7 @@
                 opacity: 1,
                 y: 0,
                 duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: "#assistantsTitle",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
-                }
+                ease: "power3.out"
             });
 
             // Animate assistant cards with stagger
@@ -184,12 +175,7 @@
                     grid: "auto",
                     from: "start"
                 },
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: ".assistants-grid",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
-                }
+                ease: "power3.out"
             });
         });
     </script>
