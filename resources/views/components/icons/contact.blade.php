@@ -1,0 +1,1 @@
+<img {{ $attributes->merge(['class' => 'w-5 h-5']) }} src="{{ asset('images/edit-document-icon.svg') }}" alt="Contact">

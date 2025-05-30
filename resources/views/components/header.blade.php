@@ -25,6 +25,7 @@
                             ['icon' => 'trainingen', 'label' => 'Trainingen', 'href' => '/trainingen'],
                             ['icon' => 'money', 'label' => 'Contribute', 'href' => '/contribute'],
                             ['icon' => 'agenda', 'label' => 'Clubinformatie', 'href' => '/clubinformatie'],
+                            ['icon' => 'contact', 'label' => 'Contact', 'href' => '/contact'],
                         ];
                     @endphp
                     @foreach($navLinks as $link)
@@ -68,6 +69,7 @@
                 ['icon' => 'trainingen', 'label' => 'Trainingen', 'href' => '/trainingen'],
                 ['icon' => 'money', 'label' => 'Contribute', 'href' => '/contribute'],
                 ['icon' => 'agenda', 'label' => 'Clubinformatie', 'href' => '/clubinformatie'],
+                ['icon' => 'contact', 'label' => 'Contact', 'href' => '/contact'],
             ];
         @endphp
         @foreach($navLinks as $link)
