@@ -1,5 +1,9 @@
-<x-guest-layout>
-    <!-- Fixed hero background image -->
+@extends('layouts.guest')
+
+@section('title', 'Home | Quantora Solutions')
+
+@section('content')
+        <!-- Fixed hero background image -->
     <div class="fixed inset-0 w-full h-full -z-10 bg-cover bg-center bg-no-repeat" 
          style="background-image: url('{{ asset('images/slider_1_1920.jpg') }}');"></div>
 
@@ -53,7 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     );
 
-    // Fade in and slide up the .slide section as you scroll
+
+        // Fade in and slide up the .slide section as you scroll
     gsap.fromTo(".slide",
         { opacity: 0.5, y: 100 },
         {
@@ -70,4 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 });
 </script>
-</x-guest-layout>
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+@filamentScripts
+@endsection

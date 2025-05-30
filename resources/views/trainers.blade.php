@@ -1,7 +1,10 @@
-<x-guest-layout>
+@extends('layouts.guest')
 
+@section('title', 'Trainers overzicht | Dionysius')
+
+@section('content')
     <div class="mx-40 my-16">
-        <h2 class="text-5xl font-bold mb-8 text-center my-40 opacity-0 translate-y-10" id="trainersTitle" style="color: #660000;">Onze trainers
+        <h2 class="text-5xl font-bold mb-8 text-center my-40 opacity-0 translate-y-10" id="trainersTitle">Onze trainers
         </h2>
     </div>
     @php
@@ -103,7 +106,7 @@
         @endforeach
     </div>
     <div class="mx-40 my-16">
-        <h2 class="text-5xl font-bold mb-8 text-center my-16 opacity-0 translate-y-10" id="assistantsTitle" style="color: #660000;">Onze
+        <h2 class="text-5xl font-bold mb-8 text-center my-16 opacity-0 translate-y-10" id="assistantsTitle">Onze
             assistenten</h2>
     </div>
     <!-- Assistant Cards (similar updates) -->
@@ -179,4 +182,6 @@
             });
         });
     </script>
-</x-guest-layout>
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+@filamentScripts
+@endsection

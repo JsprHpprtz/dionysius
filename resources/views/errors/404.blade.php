@@ -1,4 +1,8 @@
-<x-guest-layout>
+@extends('layouts.guest')
+
+@section('title', '404 | Pagina Niet Gevonden | Dionysius')
+
+@section('content')
     <div class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <div class="mb-6 sm:mb-8" id="logo">
             <x-application-logo class="theme-logo w-16 h-16 sm:w-20 sm:h-20" />
@@ -71,4 +75,6 @@
             });
         });
     </script>
-</x-guest-layout>
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+@filamentScripts
+@endsection
