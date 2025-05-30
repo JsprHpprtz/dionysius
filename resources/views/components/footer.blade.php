@@ -1,4 +1,4 @@
-<footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
+<footer class="footer sm:footer-horizontal bg-base-300 text-base-content p-10">
   <aside>
     <div>
         <x-application-logo-small class="theme-logo w-full max-w-[3rem] sm:max-w-[4rem] md:max-w-[5rem] h-auto" alt="logo" />
