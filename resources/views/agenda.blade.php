@@ -1,5 +1,8 @@
-<x-guest-layout>
+@extends('layouts.guest')
 
+@section('title', 'Agenda | Dionysius')
+
+@section('content')
 <style>
   .tabs-box {
     position: relative;
@@ -268,4 +271,6 @@
         });
     }
 </script>
-</x-guest-layout>
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+@filamentScripts
+@endsection

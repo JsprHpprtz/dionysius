@@ -1,4 +1,8 @@
-<x-guest-layout>
+@extends('layouts.guest')
+
+@section('title', 'Home | Quantora Solutions')
+
+@section('content')
         <div class="w-full min-h-screen flex items-center justify-center rounded-none shadow-none m-0 z-0"
              style="background-image: url('{{ asset('images/slider_1_1920.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
             <div id="hero-content" class="backdrop-blur-md bg-black/50 p-8 rounded text-white text-center w-full">
@@ -32,4 +36,6 @@
                 });
             });
         </script>
-</x-guest-layout>
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+@filamentScripts
+@endsection
