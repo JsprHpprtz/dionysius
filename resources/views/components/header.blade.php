@@ -1,4 +1,5 @@
-<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-white/80 dark:bg-[#ebebeb]/80 border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm">
+<nav class="fixed top-4 left-4 right-4 z-50 rounded-2xl backdrop-blur-sm bg-base-300/80 border-b border-gray-200/50 dark:border-gray-700/50 shadow-xl mx-4"
+>
     <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-3">
         <!-- Logo and hamburger button ... -->
         <div class="">
@@ -153,5 +154,55 @@
                 document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
             });
         }
+
+        // --- Auto-hide navbar background after 1s of no interaction ---
+        const navbar = document.querySelector('nav');
+        let hideTimeout;
+
+        function fadeNavbarBgOut() {
+            if (navbar) {
+                gsap.to(navbar, { 
+                    backgroundColor: "rgba(255,255,255,0)", // fallback for light mode
+                    "--tw-bg-opacity": 0, // for Tailwind bg-base-300/80
+                    backdropFilter: "blur(0px)",
+                    webkitBackdropFilter: "blur(0px)",
+                    boxShadow: "0 0 0 0 rgba(0,0,0,0)", // remove shadow
+                    borderColor: "rgba(0,0,0,0)", // remove border
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
+            }
+        }
+
+        function fadeNavbarBgIn() {
+            if (navbar) {
+                gsap.to(navbar, { 
+                    backgroundColor: "", // restore Tailwind class
+                    "--tw-bg-opacity": 0.8, // for Tailwind bg-base-300/80
+                    backdropFilter: "blur(12px)",
+                    webkitBackdropFilter: "blur(12px)",
+                    boxShadow: "", // restore shadow via class
+                    borderColor: "", // restore border via class
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
+            }
+        }
+
+        function resetNavbarBgTimer() {
+            fadeNavbarBgIn();
+            clearTimeout(hideTimeout);
+            hideTimeout = setTimeout(() => {
+                fadeNavbarBgOut();
+            }, 2000); // <-- changed from 1000 to 2000 (2 seconds)
+        }
+
+        // Listen for user interaction
+        ['mousemove', 'keydown', 'scroll', 'touchstart', 'click'].forEach(evt =>
+            window.addEventListener(evt, resetNavbarBgTimer, { passive: true })
+        );
+
+        // Start timer on load
+        resetNavbarBgTimer();
     });
 </script>
